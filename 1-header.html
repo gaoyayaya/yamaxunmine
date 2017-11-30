@@ -1,0 +1,158 @@
+    <header id="header">
+       <!--1-->
+       <div class="top">
+          <div class="ban"></div>
+          <!--广告link，默认none，鼠标移入div:.top时显示-->
+          <div class="link">
+           <span>
+               <a href="javascript:;">
+                   <img class="close" src="img/index/close.png" alt=""/>
+               </a>
+           </span>
+          </div>
+          <!--右下角广告和小图标-->
+          <div class="console">
+             广告
+          </div>
+       </div>
+       <!--2-->
+        <table></table>
+       <div id="search" class="clear">
+          <div class="search-left">
+                 <a href="#">
+                    <span class="nav-log-base"></span>
+                 </a>
+                 <a href="6-prime.html" class="nav-log-prime">
+                     免费试享Prime
+                 </a>
+          </div>
+		  <div class="search-right">
+			  <div class="left">
+				  <select class="selects">
+					  <option selected="selected">全部分类</option>
+					  <option class="other-option">Kindle</option>
+					  <option class="other-option">应用程序</option>
+					  <option class="other-option">海外购</option>
+					  <option class="other-option">图书</option>
+					  <option class="other-option">音乐</option>
+				  </select>
+				  <p class="ipt">
+					  <input class="inputs" type="text"/>
+				  </p>
+				  <div></div>
+			  </div>
+			  <div class="right">
+                  <a href="detail.html?uid=1" style="display:block;width:100%;height:100%;"></a>
+			  </div>
+		  </div>
+	   </div>
+       <div id="bottom">
+           <div class="nav_left">
+               <a href="7-all-product-kind.html">
+                 <div class="nav-top">浏览</div>
+                   <span class="nav-bottom">全部商品分类</span><span class="icon"></span>
+               </a>
+           </div>
+           <div class="nav_center">
+               <a href="#" data-link="login">我的亚马逊</a>
+               <a href="#" data-gift="card">礼品卡</a>
+               <a href="#" data-create="shop">我要开店</a>
+               <a href="#" data-help="some">帮助</a>
+               <a href="#" data-language="english">In English</a>
+           </div>
+           <div class="nav_right">
+               <a>
+                   <div class="nav-top"  data-click="login">你好，登录</div>
+                   <span class="nav-bottom">我的账户</span><span class="icon"></span>
+               </a>
+               <a href="#" data-free="prime">
+                   <div class="nav-top">免费试享</div>
+                   <span class="nav-bottom">Prime<span class="icon"></span></span>
+
+               </a>
+               <a href="#" class="shop-cart" data-cart="box">
+                   <span class="shop-cart-zero">0</span>
+                   <span class="shop-cart-img"></span>
+                   <span class="nav-bottom">购物车</span>
+               </a>
+               <a href="#" data-heart="list"
+                  class="nav-bottom dream-list">心愿单<span class="icon"></span></a>
+
+           </div>
+           <div style="clear:both"></div>
+       </div>
+
+    </header>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/03-header.js"></script>
+    <script>
+        $(".ban").mouseover((e)=>{
+            e.preventDefault();
+            $(".link").css("display",'block');
+        });
+        $(".close").click((e)=>{
+            e.stopPropagation();
+            e.preventDefault();
+            $(".link").css("display",'none');
+        });
+        $(".link").click((e)=>{
+            e.preventDefault();
+            location.href="detail.html";
+        })
+   //        登录缓存start
+        function getSession(){
+            $.ajax({
+                type:'POST',
+                url:'data/02-login/get-session.php',
+                success:function(data){
+                    console.log(data);
+                    $("[data-click=login]").html("你好，"+data);
+                    if(data!="登录"){
+                        $("[data-link=login]").html(data+"的亚马逊");
+                    }
+                    return data;
+                }
+            })
+        }
+        getSession();
+    //        登录缓存end
+        function clickJump(url){
+            var data=getSession();
+            if(data=="登录")
+                location.href='0-login.html';
+            else
+                location.href=url;
+        }
+        $("[data-link=login]").click(()=>{
+            clickJump("8-mine-ymx.html");
+        })
+        $("[data-click=login]").click(()=>{
+            clickJump("8-mine-ymx.html");
+        })
+        $("[data-z=timebuy]").click(()=>{
+            clickJump("9-z-timebuy.html");
+        })
+        $("[data-gift=card]").click(()=>{
+            clickJump("10-giftcard.html");
+        })
+        $("[data-create=shop]").click(()=>{
+            clickJump("11-create-shop.html");
+        })
+        $("[data-foreign=buy]").click(()=>{
+            clickJump("12-foreign-buy.html");
+        })
+        $("[data-help=some]").click(()=>{
+            clickJump("13-help-some.html");
+        })
+        $("[data-free=prime]").click(()=>{
+            clickJump("14-free-prime.html");
+        })
+        $("[data-cart=box]").click(()=>{
+            clickJump("cart-box.html");
+        })
+        $("[data-heart=list]").click(()=>{
+            clickJump("15-heart-list.html");
+        })
+    </script>
+ </body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <style>
+        #header,#login-body,#footer{
+            text-align:center;
+            width:100%;
+        }
+        #header{
+            height:60px;
+            margin-bottom:10px;
+        }
+        #header>span{
+            display:inline-block;
+            margin-top:8px;
+            width:100px;
+            height:60px;
+            background-image:url('img/index/global.png');
+            background-size:400px 921px;
+            background-position:-10px -132px;
+        }
+        #login-body{
+            border-bottom:2px solid lightgray;
+        }
+        #login-body>.input{
+            display:inline-block;
+            border:1px solid lightgray;
+            width:260px;
+            min-height:390px;
+            padding-left:20px;
+            text-align:left;
+            position:relative;
+            margin-bottom:30px;
+        }
+        #login-body>.input>.user-input{
+            width:90%;
+            height:25px;
+            border:1px solid lightgray;
+            margin-bottom:10px;
+        }
+        #login-body>.input .name-pwd{
+            float:left;
+            font-size:14px;
+            font-weight:600;
+            display:block;
+        }
+        #login-body>.input .forget-pwd{
+            float:right;
+            font-size:14px;
+            padding-right:20px;
+            color:blue;
+        }
+        #login-body>.input .submit{
+            width:90%;
+            margin-top:20px;
+            height:30px;
+            background:#F5D587;
+            border:1px solid darkslategray;
+            border-radius:2px;
+        }
+        #login-body>.input .create-id>span{
+            margin-top:20px;
+            display:inline-block;
+            min-width:45px;
+            color:gray;
+            font-size:15px;
+        }
+        #login-body>.input .create-single{
+            width:90%;
+            margin-top:10px;
+            height:30px;
+            background:#F1F2F5;
+            border:1px solid lightgray;
+            border-radius:2px;
+        }
+        #login-body>.input .promise{
+            display:block;
+            margin-top:30px;
+            font-size:10px;
+        }
+        #login-body>.input .promise>a{
+            color:blue;
+        }
+        #login-body>.input label{
+            color:red;
+        }
+        #footer{
+            height:200px;
+            background-image:linear-gradient(to bottom,#EDF5FC 0,white 50%);
+        }
+        #footer ul{
+            list-style: none;
+            display:inline-block;
+            margin-top:20px;
+            margin-bottom:10px;
+        }
+        #footer>div{
+            padding-left:10px;
+            text-align:center;
+        }
+        #footer ul{
+            padding-left:70px;
+        }
+        #footer ul>li{
+            float:left;
+            margin-right:80px;
+        }
+        #footer ul>li>a{
+            color:blue;
+        }
+        .clear::after{
+            content:'';
+            display:block;
+            clear:both;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header id="header">
+            <span></span>
+        </header>
+        <div id="login-body">
+            <div class="input">
+                <h2>登录</h2>
+                <p class="name-pwd">用户名</p>
+                <input type="text" name="username" data-user="name"
+                       placeholder="4-12位数字字母" class="user-input"/>
+                <p>
+                    <label></label>
+                </p>
+                <p>
+                    <a class="name-pwd">密码</a>
+                    <a href="#" class="forget-pwd">忘记密码?</a>
+                </p>
+                <input type="text" name="userpwd" data-user="pwd"
+                       placeholder="6-14位数字字母" class="user-input"/>
+                <p>
+                    <label></label>
+                </p>
+                <input type="submit" value="登录" class="submit"
+                        data-user="submit"/>
+                <p>
+                    <label></label>
+                </p>
+                <div class="create-id">
+                    <span><hr/></span>
+                    <span>Amazon的新客户？</span>
+                    <span><hr/></span>
+                </div>
+                <input type="button" value="创建您的Amazon账户"
+                  data-user="create" class="create-single"/>
+                <p class="promise">登录即表示您同意网站的
+                    <a href="#">使用条件</a>及
+                    <a href="#">隐私声明</a>
+                </p>
+            </div>
+        </div>
+        <footer id="footer">
+            <div>
+                <ul class="clear">
+                    <li><a href="#">使用条件</a></li>
+                    <li><a href="#">隐私声明</a></li>
+                    <li><a href="#">帮助</a></li>
+                </ul>
+            </div>
+            <div>版权所有© 1996-2017，亚马逊公司或其他关联公司</div>
+        </footer>
+    </div>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script>
+//        用户名和密码的验证start
+        var $userName=$("[data-user=name]");
+        var $userPwd=$("[data-user=pwd]");
+        $userName.blur((e)=>{
+            var str=$(e.target).val();
+            testUser(/^[0-9a-zA-Z]{4,12}$/,str,'用户名格式错误', e.target)
+        });
+        $userPwd.blur((e)=>{
+            var str=$(e.target).val();
+            testUser(/^[0-9a-zA-Z]{6,14}$/,str,'密码格式错误', e.target)
+        });
+        function testUser(regText,str,msg,text){
+            if(!regText.test(str)){
+                $(text).next().children().html(msg);
+                return false;
+            }else{
+                $(text).next().children().html("");
+                return true;
+            }
+        }
+//        用户名和密码的验证end
+//        登录验证start
+        $("[data-user=submit]").click((e)=>{
+            e.preventDefault();
+            var $tar=$(e.target);
+            var $name=$("[data-user=name]").val();
+            var $pwd=$("[data-user=pwd]").val();
+            $.ajax({
+                type:'POST',
+                url:'data/02-login/checkLogin.php',
+                data:{name:$name,pwd:$pwd},
+                success:function(data){
+                    console.log(data);
+                    if(data.code==1){
+                        $tar.next().children().html(data.msg);
+                    }else{
+                        $tar.next().children().html("");
+                        location.href="3-index.html";
+                    }
+                }
+            })
+        })
+//        登录验证end
+//        创建用户start
+        $("[data-user=create]").click((e)=>{
+            var $tar=$(e.target);
+            location.href="00-register.html";
+        })
+//        创建用户end
+    </script>
+</body>
+</html>

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title></title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/1_header.css"/>
+    <link rel="stylesheet" href="css/2_footer.css"/>
+    <style>
+        .container{
+            width:100%;
+            min-width:1133px;
+        }
+        #top-banner{
+            text-align:center;
+        }
+        #top-banner>.nav{
+            padding:10px 20px;
+            width:100%;
+            list-style: none;
+            background:#FAFAFA;
+            border-top:1px solid #CFCFCF;
+            border-bottom:1px solid #CFCFCF;
+        }
+        #top-banner>.nav>li>a{
+            color:#000;
+            float:left;
+            font-size:13px;
+            margin-right:20px;
+        }
+        #top-banner>.nav>.first{
+            color:#000;
+            font-weight:700;
+        }
+        #top-banner>.img>.banner1{
+            padding:0 10px;
+        }
+        #top-banner>.img>.banner1>img,
+        #top-banner>.img>.banner2 img{
+            width:99.5%;
+        }
+        #top-banner>.img{
+            text-align:center;
+        }
+        #top-banner>.img>.banner4{
+            display:inline-block;
+            width:600px;
+        }
+        #top-banner>.img .banner4-left{
+            float:left;
+        }
+        #top-banner>.img .banner4-right{
+            float:right;
+        }
+        #top-banner>.img .banner4-left>div,
+        #top-banner>.img .banner4-right>div{
+            border:1px solid lightgrey;
+            border-bottom:3px solid #E47911;
+        }
+        #top-banner>.img .caption1{
+            font-size:13px;
+            color:lightslategray;
+        }
+        #top-banner>.img .caption2{
+            font-size:22px;
+        }
+        #top-banner>.img .caption3{
+            font-size:22px;
+            color:#B12704;
+        }
+        #top-banner>.img .caption4{
+            font-size:14px;
+            color:gray;
+        }
+        #top-banner>.img button{
+            width:130px;
+            height:30px;
+            margin:10px 0;
+            background:#FAD000;
+            border:1px solid lightgrey;
+            border-radius: 2px;
+        }
+        /*bottom-banner的内容*/
+        #bottom-banner>.bottom-left{
+            padding-left:10px;
+            width:200px;
+            min-height:1300px;
+            float:left;
+            border-right:1px solid lightslategray;
+        }
+        #bottom-banner>.bottom-right{
+            float:left;
+            width:80%;
+            min-height:3000px;
+        }
+        #bottom-banner>.bottom-left>div{
+            color:lightslategray;
+            font-size:20px;
+        }
+        #bottom-banner>.bottom-left>.first-ul p:hover{
+            cursor: pointer;
+        }
+        #bottom-banner>.bottom-left>h5{
+            margin:20px 0;
+            cursor: pointer;
+        }
+        #bottom-banner>.bottom-left>b{
+            color:darkgray;
+        }
+        #bottom-banner>.bottom-left a{
+            color:#000;
+            display:inline-block;
+            padding:3px 10px;
+            font-size:14px;
+        }
+        #bottom-banner>.bottom-left span{
+            color:darkgray;
+        }
+        #bottom-banner>.bottom-left>.shaixuan{
+            margin:20px 0;
+        }
+        #bottom-banner>.bottom-left label{
+            font-size:14px;
+        }
+        #bottom-banner .right-banner{
+            margin:20px 0;
+        }
+        #bottom-banner .right-banner>img{
+            width:98%;
+        }
+        #newbook-intro,#chinese-intro{
+            text-align:center;
+            width:100%;
+            height:300px;
+            padding-top:30px;
+            padding-bottom:30px;
+        }
+        #newbook-intro button,#chinese-intro button{
+            width:50px;
+            height:50px;
+            display:inline-block;
+            cursor: pointer;
+            position:relative;
+            top:-150px;
+        }
+        #newbook-intro .click-pre,#chinese-intro .click-prev{
+            background: url("img/index/left.png") no-repeat;
+            background-position:10px 5px;
+        }
+        #newbook-intro .click-next,#chinese-intro .click-nex{
+            background: url("img/index/right-c.png") no-repeat;
+            background-position:13px 5px;
+        }
+        #newbook-intro ul,#chinese-intro ul{
+            display:inline-block;
+            list-style: none;
+        }
+        #newbook-intro ul>li,#chinese-intro ul>li{
+            text-align:center;
+            float:left;
+            width:222px;
+            height:300px;
+            margin-left:5px;
+        }
+        #newbook-intro ul>li img,#chinese-intro ul>li img{
+           width:170px;
+            height:220px;
+        }
+        #newbook-intro ul>li p,#chinese-intro ul>li p{
+            margin-top:5px;
+            font-weight:600;
+            color:cadetblue;
+            text-align:center;
+        }
+        #newbook-intro ul>li h4,#chinese-intro ul>li h4{
+            margin:0;
+            text-align:center;
+        }
+        #newbook-intro ul>li span,#chinese-intro ul>li span{
+            display:inline-block;
+            color:red;
+            font-weight:400;
+            padding-top:7px;
+        }
+        .clear::after{
+            content:'';
+            display:block;
+            clear:both;
+        }
+        #all-book>.book-top{
+            margin-left:40px;
+            width:90%;
+            height:40px;
+            border:1px solid lightslategray;
+            box-shadow: #000066 2px 2px 2px;
+            box-sizing: border-box;
+            padding:10px 25px;
+            font-size:20px;
+        }
+        #all-book>.book-footer{
+            width:90%;
+            height:40px;
+            background:aliceblue;
+            margin-left:40px;
+            text-align:center;
+        }
+        #all-book>.book-footer>span{
+            cursor: pointer;
+        }
+        #all-book>.book-footer>span>span{
+            display:inline-block;
+            position:relative;
+            top:-9px;
+            font-size:20px;
+        }
+        #all-book>.book-footer>ul{
+            list-style: none;
+            display:inline-block;
+            margin:0 20px;
+        }
+        #all-book>.book-footer>ul>li{
+            float:left;
+            padding-top:8px;
+            font-size:25px;
+            width:30px;
+            cursor: pointer;
+        }
+        #all-book>.book-footer>ul>li>button{
+            font-size:20px;
+        }
+        #all-book>.book-body{
+            margin:40px 40px 40px 40px;
+            width:90%;
+            min-height:700px;
+        }
+        #all-book>.book-body>div{
+            width:100%;
+            height:250px;
+            border-bottom:1px solid lightslategray;
+        }
+        #all-book>.book-body>div img{
+            float:left;
+            padding-top:20px;
+            padding-left:20px;
+            height:85%;
+        }
+        #all-book>.book-body>div>div{
+            box-sizing: border-box;
+            padding-top:40px;
+            float:left;
+            width:500px;
+            text-align:center;
+        }
+        #all-book>.book-body>div>div>span>a{
+           color:deepskyblue;
+            font-size:21px;
+        }
+        #all-book>.book-body>div>div>p{
+            padding:10px 10px;
+            color:lightslategray;
+        }
+        #all-book>.book-body>div>div>b{
+            display:inline-block;
+            padding:10px 10px;
+            color:white;
+            background:red;
+        }
+        #all-book>.book-body>div>div>h5{
+            margin:8px 10px;
+            font-weight:500;
+            color:deepskyblue;
+        }
+        #all-book>.book-body>div>div>a{
+           color:red;
+            font-size:20px;
+        }
+        #all-book>.book-body>div>div>h4{
+            color:lightslategray;
+            font-size:13px;
+        }
+        #all-book>.book-body>div>.cart{
+            float:left;
+            box-sizing: border-box;
+            padding-top:90px;
+        }
+        #all-book>.book-body>div>.cart>span{
+            display:block;
+            color:lightslategray;
+            margin-bottom:20px;
+        }
+        #all-book>.book-body>div>.cart>button{
+           width:150px;
+            height:35px;
+            background:darkorange;
+            font-size:15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="header"></div>
+<div class="container">
+    <div id="top-banner">
+        <div class="img">
+            <div class="banner1">
+                <img src="img/book/book-index/banner1.jpg" alt=""/>
+            </div>
+            <div class="banner2">
+                <a href="#">
+                    <img src="img/book/book-index/banner2.jpg" alt=""/>
+                </a>
+            </div>
+            <div class="banner3">
+                <a href="#">
+                    <img src="img/book/book-index/banner3.jpg" alt=""/>
+                </a>
+            </div>
+            <div class="banner4 clear">
+                <div class="banner4-left">
+                    <a href="#">
+                        <img src="img/book/book-index/banner4-1.PNG" alt=""/>
+                    </a>
+                    <div>
+                        <p class="caption1">海外购物节</pclass>
+                        <p class="caption2">满200元</p>
+                        <p class="caption3">减100元</p>
+                        <p class="caption4">11月6日-11月12日</p>
+                        <button>领取优惠券</button>
+                    </div>
+                </div>
+                <div class="banner4-right">
+                    <a href="#">
+                        <img src="img/book/book-index/banner4-2.PNG" alt=""/>
+                    </a>
+                    <div>
+                        <p class="caption1">海外购物节</p>
+                        <p class="caption2">满200元</p>
+                        <p class="caption3">减50元</p>
+                        <p class="caption4">11月6日-11月12日</p>
+                        <button>领取优惠券</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--左右两侧的商品展示start-->
+    <div id="bottom-banner" class="clear">
+        <div class="bottom-left">
+            <div>显示搜索结果：</div>
+            <h5 data-first="type">图书总类别</h5>
+            <b>满200元减100元(11/6-11/12)</b>
+            <ul data-book="kind" class="first-ul">
+            </ul>
+            <div class="shaixuan">筛选：</div>
+            <h5>配送(这是什么？)</h5>
+            <input type="radio"/>
+            <label>仅限亚马逊配送</label>
+            <span>(344)</span>
+            <h5>最新上架</h5>
+            <p>
+                <a href="#">30天以内
+                    <span>(444)</span>
+                </a>
+            </p>
+            <p>
+                <a href="#">90天以内
+                    <span>(444)</span>
+                </a>
+            </p>
+            <h5>作者</h5>
+            <p>
+                <input type="checkbox" name="writer"/>
+                <label>沈复</label><span>(3)</span>
+            </p>
+            <p>
+                <input type="checkbox" name="writer"/>
+                <label>美国迪士尼公司</label><span>(3)</span>
+            </p>
+            <p>
+                <input type="checkbox" name="writer"/>
+                <label>尼娜·兰登(Nina Laden)</label><span>(3)</span>
+            </p>
+            <p>
+                <input type="checkbox" name="writer"/>
+                <label>金顺汉</label><span>(3)</span>
+            </p>
+            <p>
+                <input type="checkbox" name="writer"/>
+                <label>夏目漱石</label><span>(3)</span>
+            </p>
+            <a href="#">＋查看更多选择</a>
+            <h5>亚马逊Prime</h5>
+            <input type="radio"/>
+            <img src="img/book/book-index/prime.gif" alt=""/>
+            <h5>客户评分</h5>
+            <ul>
+                <li><a href="#">仅五星
+                    <span>(12)</span>
+                </a></li>
+                <li><a href="#">仅五星
+                    <span>(12)</span>
+                </a></li>
+                <li><a href="#">仅五星
+                    <span>(12)</span>
+                </a></li>
+                <li><a href="#">仅五星
+                    <span>(12)</span>
+                </a></li>
+                <li><a href="#">仅五星
+                    <span>(12)</span>
+                </a></li>
+            </ul>
+            <h5>价格</h5>
+            <ul>
+                <li>
+                    <a href="#">0-9元<span>(33)</span></a>
+                </li>
+                <li>
+                    <a href="#">10-29元<span>(33)</span></a>
+                </li>
+                <li>
+                    <a href="#">30-49元<span>(33)</span></a>
+                </li>
+                <li>
+                    <a href="#">50-99元<span>(33)</span></a>
+                </li>
+                <li>
+                    <a href="#">100元以上<span>(33)</span></a>
+                </li>
+            </ul>
+            <p>
+                ¥<input type="text" style="width:40px;margin-left:5px;"/>
+                至¥<input type="text" style="width:40px;margin-left:5px;"/>
+                <button style="border-radius:30%;">GO</button>
+            </p>
+            <h5>折扣</h5>
+            <p>
+                <input type="checkbox"/>
+                <label>定价7折及以上</label>
+                <span>(33)</span>
+            </p>
+            <p>
+                <input type="checkbox"/>
+                <label>定价7折及以上</label>
+                <span>(33)</span>
+            </p>
+            <p>
+                <input type="checkbox"/>
+                <label>定价7折及以上</label>
+                <span>(33)</span>
+            </p>
+        </div>
+        <div class="bottom-right">
+            <div class="right-banner">
+                <img src="img/book/book-index/right-banner1.jpg" alt=""/>
+            </div>
+            <h2 style="padding-left:20px;">新书推荐</h2>
+            <hr/>
+            <div id="newbook-intro">
+                <button class="click-pre"></button>
+                <ul class="clear" data-show="book">
+                </ul>
+                <button class="click-next"></button>
+            </div>
+            <h2 style="padding-left:20px;">中文图书推荐</h2>
+            <hr/>
+            <div id="chinese-intro">
+                <button class="click-prev"></button>
+                <ul class="clear" data-show="chinese">
+                </ul>
+                <button class="click-nex"></button>
+            </div>
+            <div id="all-book">
+                <div class="book-top">
+                </div>
+                <div class="book-body">
+                </div>
+                <div class="book-footer">
+                    <span data-book="qian">
+                        <img src="img/index/left.png" alt=""/>
+                        <span>上一页</span>
+                    </span>
+                    <ul class="clear" data-book="pageNumber">
+                    </ul>
+                    <span data-book="hou">
+                        <span>下一页</span>
+                        <img src="img/index/right-c.png" alt=""/>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer"></div>
+<script src="js/jquery-3.2.1.js"></script>
+<script>
+    $.ajax({
+        type:'GET',
+        url:'1-header.html',
+        success:function(data){
+            $(".header").html(data);
+        }
+    })
+    $.ajax({
+        type:'GET',
+        url:'2-footer.html',
+        success:function(data){
+            $(".footer").html(data);
+        }
+    })
+    //新书推荐start
+    function loadOneNew(n){
+    $.ajax({
+        type:'POST',
+        url:'data/04-book/book_product.php',
+        data:{new:1,pno:n},
+        success:function(data){
+            pageNum=data.pageCount;
+            var dataList=data.data;
+            var str="";
+            for(var tmp of dataList){
+                str+=`<li>
+                    <a href="detail.html?aid=${tmp.aid}">
+                    <img src="${tmp.img}" alt=""/>
+                    <p>${tmp.title}</p>
+                    <h4>${tmp.writer}</h4>
+                    <span>¥${tmp.price}</span>
+                    </a>
+                </li>`;
+            }
+            $("[data-show=book]").html(str);
+        }
+    })
+    }
+    var pageNum=1;
+    (()=>{
+    loadOneNew(1);
+    var n=1;
+    $(".click-pre").click(()=>{
+        if(n>1) n--;
+            loadOneNew(n);
+    });
+    $(".click-next").click(()=>{
+        if(n<pageNum) n++;
+        loadOneNew(n);
+        console.log(n);
+    })
+    })();
+    //新书推荐end
+    //中文图书推荐start
+    function loadOneChinese(n){
+        $.ajax({
+            type:'POST',
+            url:'data/04-book/book_product.php',
+            data:{mid:1,pno:n},
+            success:function(data){
+                pageCount=data.pageCount;
+                var dataList=data.data;
+                var str="";
+                for(var tmp of dataList){
+                    str+=`
+                <li>
+                    <a href="detail.html?aid=${tmp.aid}">
+                    <img src="${tmp.img}" alt=""/>
+                    <p>${tmp.title}</p>
+                    <h4>${tmp.writer}</h4>
+                    <span>¥${tmp.price}</span>
+                    </a>
+                </li>
+                `;
+                }
+                $("[data-show=chinese]").html(str);
+            }
+        })
+    }
+    var pageCount=1;
+    (()=>{
+    loadOneChinese(1);
+    var n=1;
+    $(".click-prev").click(()=>{
+        if(n>1) n--;
+        loadOneChinese(n);
+    });
+    $(".click-nex").click(()=>{
+        if(n<pageCount) n++;
+        loadOneChinese(n);
+        console.log(n);
+    })
+    })();
+    //中文图书推荐end
+    //满减搜索start
+    function loadOneMan(n){
+        $.ajax({
+            type:'POST',
+            url:'data/04-book/book_product.php',
+            data:{sale:1,pno:n},
+            success:function(data){
+                pageSum=data.pageCount;
+                var dataList=data.data;
+                var str1="";
+                var str2="";
+                $(".book-top").html("显示：共"+data.recordCount+"条搜索结果");
+                for(var i=0;i<data.pageCount;i++){
+                   str2+=`<li><button onclick="loadOneMan(${i+1})">${i+1}</button></li>`;
+                }
+                for(var tmp of dataList){
+                    str1+=`
+                <div>
+                        <a href="detail.html?aid=${tmp.aid}">
+                        <img src="${tmp.img}" alt=""/>
+                        </a>
+                        <div>
+                            <span><a href="detail.html?aid=${tmp.aid}">${tmp.title}</a></span>
+                            <p>${tmp.writer}</p>
+                            <b>满200减100</b>
+                            <h5>${tmp.copy=1?"精装":(tmp.copy=0?"平装":"电子书")}</h5>
+                            <a href="detail.html?aid=${tmp.aid}">
+                                ¥${tmp.price}
+                            </a>
+                            <h4>${tmp.send_way=1?"亚马逊配送（免运费）":"不免运费"}</h4>
+                        </div>
+                        <div class="cart">
+                            <p>
+                                <img src="${tmp.introimg}"
+                                style="position:relative;top:-20px;width:80px;right:-170px;" alt=""/>${tmp.intro}
+                            </p>
+                            <span>万种图书-满200元减100</span>
+                            <button>加入购物车</button>
+                        </div>
+                    </div>
+                `;
+                }
+                $(".book-body").html(str1);
+                $("[data-book=pageNumber]").html(str2);
+            }
+        })
+    }
+    var pageSum=1;
+    (()=>{
+     loadOneMan(1);
+     var n=1;
+        $("[data-book=qian]").click(()=>{
+            if(n>1) n--;
+            loadOneMan(n);
+        });
+        $("[data-book=hou]").click(()=>{
+            if(n<pageSum) n++;
+            loadOneMan(n);
+            console.log(n);
+        })
+    })();
+    //满减搜索end
+    //    左侧图书分类start
+    function beginKind(){
+        $.ajax({
+            type:'GET',
+            url:'data/04-book/middle_kind.php',
+            success:function(data){
+                console.log(data);
+                var str="";
+                console.log(data.length);
+                for(var p of data){
+                    str+=`
+                <li>
+                    <a href="#">${p.title}<span>（${p.count}）</span></a>
+                </li>
+                    `;
+                }
+                $("[data-book=kind]").html(str);
+            }
+        })
+    }
+    beginKind();
+    $("[data-first=type]").click(function(){
+        beginKind();
+    })
+    //点击左边类型时右边数据的获取
+    function getRightMsg(Data){
+        $.ajax({
+            type:'GET',
+            url:'data/04-book/single_product.php',
+            data:Data,
+            success:function(data){
+                var str=``;
+                for(var tmp of data){
+                    str+=`
+                      <div style="border-bottom:1px solid lightslategray;padding:40px 100px;">
+                        <a href="detail.html?aid=${tmp.aid}">
+                        <img src="${tmp.img}" style="width:250px;" alt=""/>
+                        </a>
+                        <div style="display:inline-block;width:310px;margin:100px 120px;text-align:center;">
+                            <span>
+                            <a href="detail.html?aid=${tmp.aid}" style="color:cadetblue;font-size:18px;
+                            font-weight:600;"
+                            >${tmp.title}</a>
+                            </span>
+                            <p style="font-weight:700;margin:5px 25px;">${tmp.writer}</p>
+                            <h4 style="margin:10px 30px;color:darkgreen;">
+                            ${tmp.copy=1?"精装":(tmp.copy=0?"平装":"电子书")}</h4>
+                            <a href="detail.html?aid=${tmp.aid}" style="margin:5px 30px;font-size:22px;font-weight:600;
+                            color:red;">
+                                ¥${tmp.price}元
+                            </a>
+                            <h4>${tmp.send_way=1?"亚马逊配送（免运费）":"不免运费"}</h4>
+                        </div>
+                        <div class="cart" style="display:inline-block;position:relative;
+                        left:40px;top:-20px;">
+                            <p>
+                                <img src="${tmp.introimg}"
+                                style="height:25px;position:relative;top:-3px;right:10px;" alt=""/>${tmp.intro}
+                            </p>
+                            <span style="display:block;margin-top:5px;margin-left:10px;">万种图书</span>
+                            <button style="display:block;margin:10px 0px;width:130px;height:35px;background:orange;
+                            cursor: pointer;margin-left:-20px;border:1px solid lightslategray;">加入购物车</button>
+                        </div>
+                    </div>
+                    `
+                }
+                $(".bottom-right").html(str);
+            }
+        })
+    }
+    $("[data-book=kind]").on('click','a',function(e){
+        e.preventDefault();
+        var bid=$(this).parent().index();
+        $.ajax({
+            type:'GET',
+            url:'data/04-book/small_kind.php',
+            data:{yid:bid+1},
+            success:function(data){
+                var str="";
+                for(var p of data){
+                    str+=`
+                     <li>
+                <p>${p.title}<span>（${p.count}）</span></p>
+                     </li>
+                    `
+                }
+                $("[data-book=kind]").html(str);
+            }
+        })
+        getRightMsg({mid:bid+1});
+    });
+    $("[data-book=kind]").on('click','p',function(e){
+        var $tar=$(e.target);
+        var $kind=$tar.html().split("<span>")[0];
+        console.log($kind);
+        $.ajax({
+            url:'data/04-book/small_kind_id.php',
+            type:'GET',
+            data:{title:$kind},
+            success:function(data){
+                var small=data[0]['bid'];
+                getRightMsg({sid:small});
+            }
+        })
+    })
+
+    //    左侧图书分类end
+</script>
+</body>
+</html>

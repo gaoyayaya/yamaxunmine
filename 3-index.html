@@ -1,0 +1,1126 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <meta name="Author" content="">
+    <meta name="Keywords" content="">
+    <meta name="Description" content="">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/1_header.css"/>
+    <link rel="stylesheet" href="css/2_footer.css"/>
+    <style>
+        .all-select{
+            display:inline-block;
+            width:auto;
+            height:415px;
+            position:absolute;
+            z-index:3;
+        }
+        #select{
+            list-style: none;
+            padding:10px 15px;
+            position:absolute;
+            top:0;
+            left:0px;
+            background:white;
+            border:2px solid lightgray;
+            border-radius: 5px;
+            box-shadow:3px 3px 2px lightgray;
+        }
+        #select>li{
+            width:155px;
+            font-size:12px;
+            font-family:"微软雅黑";
+            line-height:27px;
+        }
+        #select>li:hover{
+            cursor:pointer;
+            color:orange;
+        }
+        #select>li>img{
+            float:right;
+            padding-top:7px;
+        }
+        #select>.hr{
+            height:5px;
+            position:relative;
+            color:lightgray;
+        }
+        .main{
+            width:1500px;
+            min-height:300px;
+            margin-left:200px;
+        }
+        #banner-caresoul{
+            margin-top:1px;
+            width:1500px;
+            height:300px;
+            box-sizing: border-box;
+            overflow:hidden;
+            position:relative;
+        }
+        #banner-caresoul>.banner-img{
+            list-style:none;
+            position:relative;
+        }
+        #banner-caresoul>.banner-img>li img{
+            width:1500px;
+        }
+        #banner-caresoul>.banner-img>li{
+            float:left;
+        }
+        #banner-caresoul>.indicators{
+            width:1500px;
+            list-style:none;
+            position:absolute;
+            bottom:0px;
+        }
+        #banner-caresoul>.indicators>li{
+            float:left;
+            text-align:center;
+            width:16.66%;
+            line-height:25px;
+            box-sizing: border-box;
+            background:rgba(0,0,0,0.3);
+            border-right:1px solid whitesmoke;
+        }
+        #banner-caresoul>.indicators>li>a{
+            color:white;
+            font-size:14px;
+        }
+        #banner-caresoul>.ck-slide{
+            display:inline-block;
+            width:40px;
+            height:80px;
+            position:absolute;
+        }
+        #banner-caresoul>.ck-left{
+            top:120px;
+            left:25px;
+            background:url('img/index/left.png') no-repeat;
+        }
+        #banner-caresoul>.ck-right{
+            top:135px;
+            right:10px;
+            background:url('img/index/right-c.png') no-repeat;
+        }
+        #banner-caresoul>.indicators>li.hover{
+            background:orange;
+        }
+        .main>.product{
+            width:100%;
+            height:1300px;
+        }
+        #product-left{
+            float:left;
+            width:75%;
+            height:5000px;
+        }
+        #product-right {
+            width: 25%;
+            float:right;
+            height: 2000px;
+            background-color:yellow;
+        }
+        #product-left>.today-hot{
+            width:100%;
+            height:190px;
+            background:white;
+            box-sizing: border-box;
+            padding-left:170px;
+        }
+        #product-left>.today-hot>.hot{
+            width:46%;
+            float:left;
+            margin:15px 10px;
+            line-height:100%;
+        }
+        #product-left>.today-hot>.hot>div,
+        #product-left>.today-hot>.hot>a{
+            float:left;
+            width:35%;
+            margin-right:5px;
+        }
+        #product-left>.today-hot>.hot .black{
+            font-size:15px;
+            font-weight: 600;
+        }
+        #product-left>.today-hot>.hot .orange{
+            font-size:15px;
+            font-weight: 600;
+            color:orange;
+        }
+        #product-left>.today-hot>.hot>div>span{
+            color:orange;
+            display: block;
+            margin-top:10px;
+        }
+        #product-left>.today-hot>.hot>div>p{
+            font-size:13px;
+            display: block;
+            margin-top:10px;
+            margin-bottom:10px;
+        }
+        #product-left>.today-hot>.hot>div>p{
+            font-size:13px;
+            display: block;
+            margin-top:7px;
+            margin-bottom:7px;
+        }
+        #product-left>.today-hot>.hot>div>.interval{
+            color:red;
+        }
+        #product-left>.today-hot>.hot>div>.price{
+            color:red;
+            font-size:10px;
+            font-weight: 700;
+            display: block;
+            margin-top:10px;
+            margin-bottom:10px;
+        }
+        #product-left>.today-hot>.hot>div>.hot-link{
+            color:lightslategray;
+            font-size:10px;
+            display: block;
+            margin-top:15px;
+            margin-bottom:15px;
+        }
+        #product-left>.today-hot>.hot>a>img{
+            height:180px;
+        }
+        #product-left>.intro-product>.intro-product-list>.img{
+            width:22%;
+            float:left;
+            margin-left:10px;
+            margin-right:10px;
+            text-align:center;
+        }
+        #product-left>.time-buy>.title{
+            padding-left:30px;
+        }
+        #product-left>.time-buy>div>span{
+            padding-right:20px;
+        }
+        #product-left>.time-buy>div>.kind-click{
+            float:right;
+            padding-right:20px;
+        }
+        #product-left>.time-buy>.time-box>.box{
+            width:31%;
+            height:410px;
+            float:left;
+            background:white;
+            margin-left:10px;
+            margin-right:5px;
+            text-align:center;
+        }
+        #product-left>.time-buy>.time-box>.box>.price{
+            font-size:17px;
+            font-weight: 700;
+            display:block;
+            margin:10px 0;
+        }
+        #product-left>.time-buy>.time-box>.box>p>span{
+            padding:2px 3px;
+            background:orangered;
+            color:white;
+        }
+        #product-left>.time-buy>.time-box>.box>button{
+            background:#F5D88F;
+            width:90%;
+            height:40px;
+            border-radius:3px;
+            font-size:15px;
+            font-weight: 600;
+            margin-top:15px;
+        }
+        #product-left>.time-buy>.pageLoad>p{
+            float:right;
+        }
+        #foreign-buy>.foreign-top,#fashion-buy>.foreign-top,
+        #electric-buy>.foreign-top,#life-buy>.foreign-top，
+        #book-buy>.foreign-top{
+            padding-left:10px;
+        }
+        #foreign-buy>.foreign-top>div,#foreign-buy>.foreign-top>ul,
+        #foreign-buy>.foreign-top>ul>li,#foreign-buy>.foreign-top>span,
+        #fashion-buy>.foreign-top>div,#fashion-buy>.foreign-top>ul,
+        #fashion-buy>.foreign-top>ul>li,#fashion-buy>.foreign-top>span,
+        #electric-buy>.foreign-top>div,#electric-buy>.foreign-top>ul,
+        #electric-buy>.foreign-top>ul>li,#electric-buy>.foreign-top>span,
+        #life-buy>.foreign-top>div,#life-buy>.foreign-top>ul,
+        #life-buy>.foreign-top>ul>li,#life-buy>.foreign-top>span,
+        #book-buy>.foreign-top>div,#book-buy>.foreign-top>ul,
+        #book-buy>.foreign-top>ul>li,#book-buy>.foreign-top>span{
+            float:left;
+            margin-left:20px;
+            min-width:20px;
+            line-height: 40px;
+        }
+        #foreign-buy>.foreign-bottom,
+        #fashion-buy>.foreign-bottom,
+        #electric-buy>.foreign-bottom,
+        #life-buy>.foreign-bottom,
+        #book-buy>.foreign-bottom{
+            padding-left:10px;
+            padding-right:10px;
+        }
+        #foreign-buy>.foreign-bottom>div>div,
+        #fashion-buy>.foreign-bottom>div>div,
+        #electric-buy>.foreign-bottom>div>div,
+        #life-buy>.foreign-bottom>div>div,
+        #book-buy>.foreign-bottom>div>div{
+            box-sizing:border-box;
+            float:left;
+            width:20%;
+            height:140px;
+            text-align:center;
+            background:darkseagreen;
+        }
+        #foreign-buy>.foreign-bottom>div>div>ul,
+        #fashion-buy>.foreign-bottom>div>div>ul,
+        #electric-buy>.foreign-bottom>div>div>ul,
+        #life-buy>.foreign-bottom>div>div>ul,
+        #book-buy>.foreign-bottom>div>div>ul{
+            float:left;
+            list-style:none;
+            width:50%;
+            font-size:13px;
+        }
+        .clear::after{
+            content:'';
+            display:block;
+            clear:both;
+        }
+        .three-angel{
+            display:inline-block;
+            width:0px;
+            height:0px;
+            border:5px solid transparent;
+            border-top:5px solid black;
+        }
+        .footer{
+            display:block;
+        }
+        #small-select{
+            display:none;
+            position:absolute;
+            width:500px;
+            height:410px;
+            background:white;
+            left:190px;
+            top:0;
+            box-sizing: border-box;
+            padding:15px 15px;
+        }
+        #small-select>p{
+            color:orange;
+            margin-bottom:10px;
+        }
+        #small-select>div{
+            margin-left:10px;
+            margin-bottom:10px;
+            font-size:13px;
+            line-height:15px;
+        }
+        #small-select>div>span>a{
+            color:orange;
+        }
+        #small-select ul{
+            margin-left:5px;
+            list-style:none;
+            display:inline-block;
+            position:relative;
+            top:2px;
+        }
+        #small-select ul>li{
+            float:left;
+            margin-left:10px;
+            padding-left:10px;
+            border-left:1px solid lightslategray;
+        }
+        #small-select img{
+            width:100%;
+        }
+        #small-select a:hover{
+            text-decoration: underline;
+        }
+        .jianjiao{
+            display:inline-block;
+            z-index:4;
+            border:15px solid transparent;border-bottom:15px solid white;
+        }
+    </style>
+</head>
+<body>
+    <div class="jianjiao" style="position:absolute;left:124px;top:118px;">
+    </div>
+   <div class="header"></div>
+   <!--最左侧的搜索部分start-->
+   <div class="all-select">
+       <ul id="select">
+           <li>图书
+               <img src="img/index/jiantou-white.png" alt=""/>
+           </li>
+           <li>智能电子、摄影、数码
+               <img src="img/index/jiantou-white.png" alt=""/>
+           </li>
+           <li>美妆、护肤
+               <img src="img/index/jiantou-white.png" alt=""/>
+           </li>
+           <li>运动户外
+               <img src="img/index/jiantou-white.png" alt=""/>
+           </li>
+           <li>服装、鞋靴、箱包
+               <img src="img/index/jiantou-white.png" alt=""/>
+           </li>
+           <li>玩具、家庭会员
+               <img src="img/index/jiantou-white.png" alt=""/>
+           </li>
+           <li>家具、厨具、家装
+               <img src="img/index/jiantou-white.png" alt=""/>
+           </li>
+           <li>食品、酒水、生鲜
+               <img src="img/index/jiantou-white.png" alt=""/>
+           </li>
+           <li>钟表、首饰
+               <img src="img/index/jiantou-white.png" alt=""/>
+           </li>
+           <li>游戏、影视、乐器
+               <img src="img/index/jiantou-white.png" alt=""/>
+           </li>
+           <li>海外淘
+               <img src="img/index/jiantou-white.png" alt=""/>
+           </li>
+           <li>精致生活
+               <img src="img/index/jiantou-white.png" alt=""/>
+           </li>
+           <li>亚马逊Drive
+               <img src="img/index/jiantou-white.png" alt=""/>
+           </li>
+           <li class="hr"><hr/></li>
+           <li>全部商品分类</li>
+       </ul>
+       <div id="small-select"></div>
+   </div>
+
+   <!--最左侧的搜索部分end-->
+
+   <div class="main clear">
+       <div id="banner-caresoul">
+           <!-- 图片区域 -->
+           <ul class="banner-img clear"
+               style="transition:all .3s linear;" data-load="bannerImgs">
+           </ul>
+           <!--左右方向按钮-->
+           <a href="#" class="ck-slide ck-left" data-move="left">
+               <img src="" alt=""/>
+           </a>
+           <a href="#" class="ck-slide ck-right" data-move="right">
+               <img src="" alt=""/>
+           </a>
+           <!--导航条-->
+           <ul data-load="bannerInds" class="indicators clear">
+               <!--<li>-->
+               <!--<a href="detail.html">-->
+               <!--<p>的物品让你飞</p>-->
+               <!--<p>的物品让你飞</p>-->
+               <!--</a>-->
+               <!--</li>-->
+           </ul>
+       </div>
+       <div class="product clear">
+           <div id="product-left">
+               <!--今日热销start-->
+               <div class="today-hot clear">
+                   <div class="hot clear">
+                       <div>
+                           <div>
+                               <span class="black">今日</span>
+                               <span class="orange">镇店之宝</span>
+                           </div>
+                           <span>限时热门抢购</span>
+                           <p class="price">¥199.99</p>
+                           <p>距结束 </p>
+                           <p class="interval">00::30:07</p>
+                           <p class="hot-link">
+                               <img src="img/index/jiantou.png" alt=""/>
+                               <a href="time-sale.html">所有秒杀商品</a>
+                           </p>
+                       </div>
+                       <a href="detail.html">
+                           <img src="img/index/today-hot1.jpg" alt=""/>
+                       </a>
+                   </div>
+                   <div class="hot">
+                       <div>
+                           <div>
+                               <span class="black">海外购直邮</span>
+                           </div>
+                           <span>亚马逊收藏</span>
+                           <p class="price">¥99.99</p>
+                           <p>距结束 </p>
+                           <p class="interval">00::30:07</p>
+                           <p class="hot-link">
+                               <img src="img/index/jiantou.png" alt=""/>
+                               <a href="detail.html">立即查看</a>
+                           </p>
+                       </div>
+                       <a href="detail.html">
+                           <img src="img/index/today-hot2.png" alt=""/>
+                       </a>
+                   </div>
+               </div>
+               <!--今日热销end-->
+               <!--为您推荐start-->
+               <div class="intro-product">
+                   <div class="intro-product-title" style="margin-left:30px">
+                       <img src="img/index/xing.png" style="
+                      width:40px" alt=""/>
+                      <span style="font-size:20px;font-weight:700;
+                      position: relative;top:-13px">
+                          根据您的浏览记录为您推荐</span>
+                       <hr/>
+                   </div>
+                   <div class="intro-product-list clear">
+                       <div class="img">
+                           <a href="detail.html">
+                               <img src="img/index/intro/intro1.jpg" alt=""/>
+                           </a>
+                           <p>价格</p>
+                       </div>
+                       <div class="img">
+                           <a href="detail.html">
+                               <img src="img/index/intro/intro3.jpg" alt=""/>
+                           </a>
+                           <p>价格</p>
+                       </div>
+                       <div class="img">
+                           <img src="img/index/intro/intro4.jpg" alt=""/>
+                           <p>价格</p>
+                       </div>
+                       <div class="img">
+                           <img src="img/index/intro/intro5.jpg" alt=""/>
+                           <p>价格</p>
+                       </div>
+                   </div>
+               </div>
+               <hr/>
+               <!--为您推荐end-->
+               <!--时时秒杀start-->
+               <div class="time-buy">
+                   <h2 class="title">时时Z秒杀</h2>
+                   <div>
+                       <span><a href="#">正在抢购</a></span>
+                       <span><a href="#">即将开始</a></span>
+                       <span><a href="#">已经结束</a></span>
+                       <p class="kind-click">
+                           <span><a href="#">类别</a></span>
+                           <span class="three-angel"></span>
+                       </p>
+                   </div>
+                   <div class="time-box clear">
+                       <div class="box">
+                           <a href="time-sale.html">
+                               <img src="img/index/yurongfu.jpg" alt=""/>
+                           </a>
+                           <p>
+                               <span>镇店之宝</span>
+                           </p>
+                           <p class="price">¥99.00-¥1,599.00</p>
+                           <p><a href="#">【保暖专场】运动户外休闲</a></p>
+                           <img src="img/index/haoping.png" alt=""/>
+                           <button>查看优惠</button>
+                       </div>
+                       <div class="box">
+                           <img src="img/index/yurongfu.jpg" alt=""/>
+                           <p>
+                               <span>镇店之宝</span>
+                           </p>
+                           <p class="price">¥99.00-¥1,599.00</p>
+                           <p><a href="#">【保暖专场】运动户外休闲</a></p>
+                           <img src="img/index/haoping.png" alt=""/>
+                           <button>查看优惠</button>
+                       </div>
+                       <div class="box">
+                           <img src="img/index/yurongfu.jpg" alt=""/>
+                           <p>
+                               <span>镇店之宝</span>
+                           </p>
+                           <p class="price">¥99.00-¥1,599.00</p>
+                           <p><a href="#">【保暖专场】运动户外休闲</a></p>
+                           <img src="img/index/haoping.png" alt=""/>
+                           <button>查看优惠</button>
+                       </div>
+                   </div>
+                   <div class="pageLoad">
+                       <p>1/337页</p>
+                   </div>
+               </div>
+               <!--时时秒杀end-->
+               <!--海外购start-->
+               <div id="foreign-buy" class="clear">
+                   <div class="foreign-top clear">
+                       <div>
+                           <img src="img/index/hot.png" alt=""
+                                style="position: relative;top:15px;padding-right:10px;"/>
+                           <h3 style="display:inline-block">海外购</h3>
+                       </div>
+                       <span style="position: relative;top:20px;">|</span>
+                       <ul style="position: relative;top:20px;">
+                           <li>奶粉</li>
+                           <li>美妆</li>
+                           <li>箱包</li>
+                           <li>热门品牌</li>
+                       </ul>
+                   </div>
+                   <div class="foreign-bottom">
+                       <div class="clear">
+                           <div style="background-color:#D9E9E9">
+                               <h4>雷蛇</h4>
+                               <h3>热销单品</h3>
+                               <p><a href="#">查看更多></a></p>
+                           </div>
+                           <div style="background:white;">
+                               <a href="detail.html">
+                                   <img style="width:150px;"
+                                        src="img/index/huatong.jpg" alt=""/>
+                               </a>
+                           </div>
+                           <div style="background:#E9EFEF">
+                               <h4>海外购</h4>
+                               <h3>销售冠军</h3>
+                               <p><a href="#">查看销售榜></a></p>
+                           </div>
+                           <div style="background:white;">
+                               <a href="detail.html">
+                                   <img style="width:150px;"
+                                        src="img/index/huatong.jpg" alt=""/>
+                               </a>
+                           </div>
+                           <div style="background:#EDECF2">
+                               <h4>搜索热词</h4>
+                               <ul>
+                                   <li>lamer</li>
+                                   <li>耐克</li>
+                                   <li>switch</li>
+                                   <li>雅诗兰黛</li>
+                               </ul>
+                               <ul>
+                                   <li>ugg</li>
+                                   <li>保温杯</li>
+                                   <li>ecco</li>
+                                   <li>膳魔师</li>
+                               </ul>
+                           </div>
+                       </div>
+                       <div class="clear">
+                           <div style="background:#E9EFEF">
+                               <h4>鞋靴</h4>
+                               <h3>心动低价</h3>
+                               <p><a href="#">查看更多></a></p>
+                           </div>
+                           <div style="background:white">
+                               <a href="detail.html">
+                                   <img src="img/index/xiezi.jpg" style="width:210px;" alt=""/>
+                               </a>
+                           </div>
+                           <div style="background:#CCE3EB">
+                               <h4>全球尖货</h4>
+                               <h3>发现好物</h3>
+                               <p><a href="#">查看更多></a></p>
+                           </div>
+                           <div style="background:white;">
+                               <a href="detail.html">
+                                   <img style="width:150px;"
+                                        src="img/index/huatong.jpg" alt=""/>
+                               </a>
+                           </div>
+                           <div style="background:#DEECED">
+                               <h4>热门分类</h4>
+                               <ul>
+                                   <li>Comotomo</li>
+                                   <li>Graco</li>
+                                   <li>运动户外</li>
+                               </ul>
+                               <ul>
+                                   <li>玩具</li>
+                                   <li>阿玛尼AJ</li>
+                                   <li>奶粉</li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <!--海外购end-->
+               <!--广告1start?????????????????????????????????-->
+               <div>
+                   <!--<img src="img/index/banner-xia-1.jpg" alt=""/>-->
+               </div>
+               <!--广告1end-->
+               <!--潮流时尚馆start-->
+               <div id="fashion-buy">
+                   <div class="foreign-top clear">
+                       <div>
+                           <img src="img/index/fashion.png" alt="" style=" width:40px;
+                          position:relative;top:15px;padding-right:10px;"/>
+                           <h3 style="display:inline-block">潮流时尚馆</h3>
+                       </div>
+                       <span style="position: relative;top:20px;">|</span>
+                       <ul style="position: relative;top:20px;">
+                           <li>服装</li>
+                           <li>鞋靴</li>
+                           <li>箱包</li>
+                           <li>钟表</li>
+                           <li>珠宝</li>
+                       </ul>
+                   </div>
+                   <div class="foreign-bottom">
+                       <div class="clear">
+                           <div style="background-color:#D9E9E9">
+                               <h4>时尚鞋靴</h4>
+                               <h3>1件售价5折</h3>
+                               <p><a href="#">查看促销></a></p>
+                           </div>
+                           <div style="background:white;">
+                               <img style="width:150px;"
+                                    src="img/index/xie2.jpg" alt=""/>
+                           </div>
+                           <div style="background:#E9EFEF">
+                               <h4>珠宝首饰</h4>
+                               <h3>1件售价6折</h3>
+                               <p><a href="#">查看促销></a></p>
+                           </div>
+                           <div style="background:white;">
+                               <img style="width:150px;"
+                                    src="img/index/xie2.jpg" alt=""/>
+                           </div>
+                           <div style="background:#EDECF2">
+                               <h4>搜索热词</h4>
+                               <ul>
+                                   <li>ecco</li>
+                                   <li>clarks</li>
+                                   <li>ugg</li>
+                                   <li>puma</li>
+                               </ul>
+                               <ul>
+                                   <li>nike</li>
+                                   <li>斯凯奇</li>
+                                   <li>coach</li>
+                                   <li>钱包</li>
+                               </ul>
+                           </div>
+                       </div>
+                       <div class="clear">
+                           <div style="background:#E9EFEF">
+                               <h4>手表钟表</h4>
+                               <h3>1件售价6折</h3>
+                               <p><a href="#">查看促销></a></p>
+                           </div>
+                           <div style="background:white">
+                               <img src="img/index/biao2.jpg" alt=""/>
+                           </div>
+                           <div style="background:#CCE3EB">
+                               <h4>皮具箱包</h4>
+                               <h3>1件售价减10</h3>
+                               <p><a href="#">查看促销></a></p>
+                           </div>
+                           <div style="background:white;">
+                               <img style="width:150px;"
+                                    src="img/index/xie2.jpg" alt=""/>
+                           </div>
+                           <div style="background:#DEECED">
+                               <h4>热门分类</h4>
+                               <ul>
+                                   <li>男装</li>
+                                   <li>男鞋主题</li>
+                                   <li>女装</li>
+                               </ul>
+                               <ul>
+                                   <li>女鞋主题</li>
+                                   <li>运动鞋</li>
+                                   <li>休闲运动鞋</li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <!--潮流时尚馆end-->
+               <!--电器数码馆start-->
+               <div id="electric-buy">
+                   <div class="foreign-top clear">
+                       <div>
+                           <img src="img/index/fashion.png" alt="" style=" width:40px;
+                          position:relative;top:15px;padding-right:10px;"/>
+                           <h3 style="display:inline-block">电器数码馆</h3>
+                       </div>
+                       <span style="position: relative;top:20px;">|</span>
+                       <ul style="position: relative;top:20px;">
+                           <li>服装</li>
+                           <li>鞋靴</li>
+                           <li>箱包</li>
+                           <li>钟表</li>
+                           <li>珠宝</li>
+                       </ul>
+                   </div>
+                   <div class="foreign-bottom">
+                       <div class="clear">
+                           <div style="background-color:#D9E9E9">
+                               <h3>时尚鞋靴</h3>
+                               <h2>1件售价5折</h2>
+                               <p>查看促销></p>
+                           </div>
+                           <div style="background:white;">
+                               <img style="width:150px;"
+                                    src="img/index/xie2.jpg" alt=""/>
+                           </div>
+                           <div style="background:#E9EFEF">
+                               <h3>珠宝首饰</h3>
+                               <h2>1件售价6折</h2>
+                               <p>查看促销>></p>
+                           </div>
+                           <div style="background:white;">
+                               <img style="width:150px;"
+                                    src="img/index/xie2.jpg" alt=""/>
+                           </div>
+                           <div style="background:#EDECF2">
+                               <h3>搜索热词</h3>
+                               <ul>
+                                   <li>ecco</li>
+                                   <li>clarks</li>
+                                   <li>ugg</li>
+                                   <li>puma</li>
+                               </ul>
+                               <ul>
+                                   <li>nike</li>
+                                   <li>斯凯奇</li>
+                                   <li>coach</li>
+                                   <li>钱包</li>
+                               </ul>
+                           </div>
+                       </div>
+                       <div class="clear">
+                           <div style="background:#E9EFEF">
+                               <h3>手表钟表</h3>
+                               <h2>1件售价6折</h2>
+                               <p>查看促销></p>
+                           </div>
+                           <div style="background:white">
+                               <img src="img/index/biao2.jpg" alt=""/>
+                           </div>
+                           <div style="background:#CCE3EB">
+                               <h3>皮具箱包</h3>
+                               <h2>1件售价减10</h2>
+                               <p>查看促销></p>
+                           </div>
+                           <div style="background:white;">
+                               <img style="width:150px;"
+                                    src="img/index/xie2.jpg" alt=""/>
+                           </div>
+                           <div style="background:#DEECED">
+                               <h3>热门分类</h3>
+                               <ul>
+                                   <li>男装</li>
+                                   <li>男鞋主题</li>
+                                   <li>女装</li>
+                               </ul>
+                               <ul>
+                                   <li>女鞋主题</li>
+                                   <li>运动鞋</li>
+                                   <li>休闲运动鞋</li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <!--电器数码馆end-->
+               <!--广告2start?????????????????????????????????-->
+               <div>
+                   <!--<img src="img/index/banner-xia-1.jpg" alt=""/>-->
+               </div>
+               <!--广告2end-->
+               <!--图书音像馆start-->
+               <div id="book-buy">
+                   <div class="foreign-top clear">
+                       <div>
+                           <img src="img/index/fashion.png" alt="" style=" width:40px;
+                          position:relative;top:15px;padding-right:10px;"/>
+                           <h3 style="display:inline-block">图书音像馆</h3>
+                       </div>
+                       <span style="position: relative;top:20px;">|</span>
+                       <ul style="position: relative;top:20px;">
+                           <li>服装</li>
+                           <li>鞋靴</li>
+                           <li>箱包</li>
+                           <li>钟表</li>
+                           <li>珠宝</li>
+                       </ul>
+                   </div>
+                   <div class="foreign-bottom">
+                       <div class="clear">
+                           <div style="background-color:#D9E9E9">
+                               <h3>时尚鞋靴</h3>
+                               <h2>1件售价5折</h2>
+                               <p>查看促销></p>
+                           </div>
+                           <div style="background:white;">
+                               <img style="width:150px;"
+                                    src="img/index/xie2.jpg" alt=""/>
+                           </div>
+                           <div style="background:#E9EFEF">
+                               <h3>珠宝首饰</h3>
+                               <h2>1件售价6折</h2>
+                               <p>查看促销>></p>
+                           </div>
+                           <div style="background:white;">
+                               <img style="width:150px;"
+                                    src="img/index/xie2.jpg" alt=""/>
+                           </div>
+                           <div style="background:#EDECF2">
+                               <h3>搜索热词</h3>
+                               <ul>
+                                   <li>ecco</li>
+                                   <li>clarks</li>
+                                   <li>ugg</li>
+                                   <li>puma</li>
+                               </ul>
+                               <ul>
+                                   <li>nike</li>
+                                   <li>斯凯奇</li>
+                                   <li>coach</li>
+                                   <li>钱包</li>
+                               </ul>
+                           </div>
+                       </div>
+                       <div class="clear">
+                           <div style="background:#E9EFEF">
+                               <h3>手表钟表</h3>
+                               <h2>1件售价6折</h2>
+                               <p>查看促销></p>
+                           </div>
+                           <div style="background:white">
+                               <img src="img/index/biao2.jpg" alt=""/>
+                           </div>
+                           <div style="background:#CCE3EB">
+                               <h3>皮具箱包</h3>
+                               <h2>1件售价减10</h2>
+                               <p>查看促销></p>
+                           </div>
+                           <div style="background:white;">
+                               <img style="width:150px;"
+                                    src="img/index/xie2.jpg" alt=""/>
+                           </div>
+                           <div style="background:#DEECED">
+                               <h3>热门分类</h3>
+                               <ul>
+                                   <li>男装</li>
+                                   <li>男鞋主题</li>
+                                   <li>女装</li>
+                               </ul>
+                               <ul>
+                                   <li>女鞋主题</li>
+                                   <li>运动鞋</li>
+                                   <li>休闲运动鞋</li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <!--图书音像馆end-->
+               <!--居家生活馆start-->
+               <div id="life-buy">
+                   <div class="foreign-top clear">
+                       <div>
+                           <img src="img/index/fashion.png" alt="" style=" width:40px;
+                          position:relative;top:15px;padding-right:10px;"/>
+                           <h3 style="display:inline-block">居家生活馆</h3>
+                       </div>
+                       <span style="position: relative;top:20px;">|</span>
+                       <ul style="position: relative;top:20px;">
+                           <li>服装</li>
+                           <li>鞋靴</li>
+                           <li>箱包</li>
+                           <li>钟表</li>
+                           <li>珠宝</li>
+                       </ul>
+                   </div>
+                   <div class="foreign-bottom">
+                       <div class="clear">
+                           <div style="background-color:#D9E9E9">
+                               <h3>时尚鞋靴</h3>
+                               <h2>1件售价5折</h2>
+                               <p>查看促销></p>
+                           </div>
+                           <div style="background:white;">
+                               <img style="width:150px;"
+                                    src="img/index/xie2.jpg" alt=""/>
+                           </div>
+                           <div style="background:#E9EFEF">
+                               <h3>珠宝首饰</h3>
+                               <h2>1件售价6折</h2>
+                               <p>查看促销>></p>
+                           </div>
+                           <div style="background:white;">
+                               <img style="width:150px;"
+                                    src="img/index/xie2.jpg" alt=""/>
+                           </div>
+                           <div style="background:#EDECF2">
+                               <h3>搜索热词</h3>
+                               <ul>
+                                   <li>ecco</li>
+                                   <li>clarks</li>
+                                   <li>ugg</li>
+                                   <li>puma</li>
+                               </ul>
+                               <ul>
+                                   <li>nike</li>
+                                   <li>斯凯奇</li>
+                                   <li>coach</li>
+                                   <li>钱包</li>
+                               </ul>
+                           </div>
+                       </div>
+                       <div class="clear">
+                           <div style="background:#E9EFEF">
+                               <h3>手表钟表</h3>
+                               <h2>1件售价6折</h2>
+                               <p>查看促销></p>
+                           </div>
+                           <div style="background:white">
+                               <img src="img/index/biao2.jpg" alt=""/>
+                           </div>
+                           <div style="background:#CCE3EB">
+                               <h3>皮具箱包</h3>
+                               <h2>1件售价减10</h2>
+                               <p>查看促销></p>
+                           </div>
+                           <div style="background:white;">
+                               <img style="width:150px;"
+                                    src="img/index/xie2.jpg" alt=""/>
+                           </div>
+                           <div style="background:#DEECED">
+                               <h3>热门分类</h3>
+                               <ul>
+                                   <li>男装</li>
+                                   <li>男鞋主题</li>
+                                   <li>女装</li>
+                               </ul>
+                               <ul>
+                                   <li>女鞋主题</li>
+                                   <li>运动鞋</li>
+                                   <li>休闲运动鞋</li>
+                               </ul>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <!--居家生活馆end-->
+           </div>
+           <!--右侧广告start-->
+           <div id="product-right">
+               <div>
+                   <a href="#">
+                       <img src="img/index/right-banner1.jpg" alt=""/>
+                   </a>
+               </div>
+               <div>
+                   <a href="#">
+                       <img src="img/index/right-banner1.jpg" alt=""/>
+                   </a>
+               </div>
+               <div>
+                   <a href="#">
+                       <img src="img/index/right-banner1.jpg" alt=""/>
+                   </a>
+               </div>
+               <div>
+                   <a href="#">
+                       <img src="img/index/right-banner1.jpg" alt=""/>
+                   </a>
+               </div>
+               <hr/>
+               <!--热销电子书start-->
+               <div>
+
+               </div>
+               <!--热销电子书end-->
+           </div>
+           <!--右侧广告end-->
+       </div>
+   </div>
+   <!--引入底部文件-->
+   <div class="footer"></div>
+   <script src="js/jquery-3.2.1.js"></script>
+   <script src="js/01-index.js"></script>
+   <script>
+       $.ajax({
+           type:'GET',
+           url:'1-header.html',
+           success:function(data){
+               $(".header").html(data)
+           }
+       })
+       $.ajax({
+           type:'GET',
+           url:'2-footer.html',
+           success:function(data){
+               $(".footer").html(data)
+           }
+       })
+       var dataList=[
+               [
+                       ['图书'],
+                       ['中文图书','教材教辅','少儿','文学','社科','经管','亚马逊编辑推荐'],
+                       ['进口图书','Children`s Books','Literature` Fiction','进口港台图书'],
+                       ['电子书','小说','经管','文学','科技','社科','特价书','网络小说'],
+                       ['教材教辅','考试','外语学习','教材','中小学辅导','工具书'],
+                       ['少儿','0-2岁','3-6岁','7-10岁','11-14岁','儿童绘本'],
+                       ['文学艺术','小说','文学','青春与动漫','传记','艺术'],
+                       ['人文社科','历史','国学古籍','哲学与宗教','法律','心理学'],
+                       ['经济管理','投资理财','管理','经济与金融','市场营销'],
+                       ['励志与成功','心灵读物','人际交往','职场','成功学'],
+                       ['img/index/small-select1.jpg']
+               ],
+           [
+               ['图书'],
+               ['中文图书','教材教辅','少儿','文学','社科','经管','亚马逊编辑推荐'],
+               ['进口图书','Children`s Books','Literature & Fiction','进口港台图书'],
+               ['电子书','小说','经管','文学','科技','社科','特价书','网络小说'],
+               ['教材教辅','考试','外语学习','教材','中小学辅导','工具书'],
+               ['少儿','0-2岁','3-6岁','7-10岁','11-14岁','儿童绘本'],
+               ['文学艺术','小说','文学','青春与动漫','传记','艺术'],
+               ['人文社科','历史','国学古籍','哲学与宗教','法律','心理学'],
+               ['经济管理','投资理财','管理','经济与金融','市场营销'],
+               ['励志与成功','心灵读物','人际交往','职场','成功学'],
+               ['img/index/small-select1.jpg']
+           ]
+       ]
+       $("#select").on('mouseover','li',function(e){
+           e.preventDefault();
+           var i=$(e.target).index();
+           var str=`<p>${dataList[i][0]}</p>`;
+           for(var j=1;j<dataList[i].length-1;j++){
+               str+=`<div>
+                   <span><a href="#">${dataList[i][j][0]}</a></span>
+                   <ul class="clear">`
+                   for(var k=1;k<dataList[i][j].length;k++){
+                       str+=`
+                       <li><a href="#">${dataList[i][j][k]}</a></li>
+                       `
+                   }
+               str+=`</ul>
+               </div>`;
+           }
+           str+=`<img src="${dataList[i][dataList[i].length-1]}">`;
+           $("#small-select").css("display","inline-block");
+           $("#small-select").html(str);
+       })
+       $(".all-select").mouseleave((e)=>{
+           e.preventDefault();
+           $("#small-select").css("display","none");
+       })
+   </script>
+</body>
+</html>

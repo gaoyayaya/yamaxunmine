@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/1_header.css"/>
+    <link rel="stylesheet" href="css/2_footer.css"/>
+    <style>
+        .content{
+            text-align:center;
+        }
+        .content .img2{
+            margin-top:50px;
+            width:1400px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header"></div>
+    <div class="content">
+        <img src="img/gift/gift-card.jpg" alt=""/>
+        <img src="img/gift/gift-card2.png" class="img2" alt=""/>
+    </div>
+    <div class="footer"></div>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/01-index.js"></script>
+    <script>
+        $.ajax({
+            type:'GET',
+            url:'1-header.html',
+            success:function(data){
+                $(".header").html(data)
+            }
+        })
+        $.ajax({
+            type:'GET',
+            url:'2-footer.html',
+            success:function(data){
+                $(".footer").html(data)
+            }
+        })
+    </script>
+</body>
+</html>

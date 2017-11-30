@@ -1,0 +1,11 @@
+body,p,ul,li,dd,dl,dt,div{
+    margin:0;
+    padding:0;
+}
+a{
+    text-decoration: none;
+    color:dimgray;
+}
+input{
+    padding:0;
+}
